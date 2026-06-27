@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  aidan-math-agent:
+    build: .
+    container_name: aidan-math-agent
+    ipc: host
+    shm_size: '2gb'
+    volumes:
+      - .:/app
+      - ./model_data:/app/model_data
+    environment:
+      - PYTHONUNBUFFERED=1
+      - MODEL_PATH=model_data/agent.pth
+      - MEMORY_PATH=model_data/memory.pkl
+      - PATH=/root/.elan/bin:/usr/local/bin:/usr/bin:/bin
+    deploy:
+      resources:
+        limits:
+          memory: 12G #4 geden 12 gye çıakrıldı.
+        reservations:
+          memory: 4G
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: unless-stopped

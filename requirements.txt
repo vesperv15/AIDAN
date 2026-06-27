@@ -1,0 +1,5 @@
+torch==2.0.1
+numpy<2.0
+sympy
+matplotlib
+lean-dojo>=1.1.0
