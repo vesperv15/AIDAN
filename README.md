@@ -21,6 +21,14 @@ Symbolic & Environment: Custom Formal Logic Wrappers (environment/math_env.py)
 System & Benchmarking: Custom Memory Profilers, Logging Interfaces
 
 ---
+## Hardware Constraints & Benchmarks
+MetricTarget / BenchmarkMax 
+RAM Footprint< 15 GB (Enforced via buffer caps)
+Search EngineMonte Carlo Tree Search (MCTS)
+Verification EngineSymbolic Environment Transition Checks
+Target RuntimeConsumer Hardware / Standard Cloud VMs
+
+---
 ## Architecture Overview
 
 AIDAN bridges the gap between probabilistic neural generation and deterministic symbolic verification to bound hallucination rates during complex deduction steps.
