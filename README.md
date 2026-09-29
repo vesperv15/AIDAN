@@ -1,15 +1,53 @@
-# AIDAN
-# Neuro-Sembolic AI AIDAN for Mathematic.
-## 🚀 What Can He Do?
-AIDAN is designed to go beyond simple text generation, focusing on structured logic and autonomous learning. Here are his core capabilities:
+# AIDAN: Neuro-Symbolic Mathematical Reasoning Engine
 
-- **Advanced Mathematical Reasoning:** Breaks down complex problems into logical steps, solving them with high precision through multi-step "chain-of-thought" processing. Unlike standard models, AIDAN can break down complex mathematical problems into logical steps.
-- **Strategic Decision Making:** Utilizes advanced search and pruning algorithms to evaluate multiple solution paths and select the most efficient one.
-- **Curriculum-Based Learning:** Features an autonomous learning system that evolves by processing information from simple to complex patterns.
-- **Transparent Logging & Monitoring:** Every decision and step is recorded through a sophisticated logging system, allowing for deep technical analysis and debugging.
-- **Object-Oriented Architecture:** Built on a modular and scalable OOP structure, making the system highly adaptable for future enhancements.
-- **Autonomous Discovery & Learning:** Capable of independently exploring and internalizing complex logical patterns and mathematical structures without constant external guidance.
-- **Resource-Efficient Performance:** Highly optimized architecture that executes complex reasoning and tree-search (MCTS) processes within a strict **15 GB RAM** footprint, proving its efficiency on consumer-grade hardware.
+An autonomous, neuro-symbolic AI reasoning system engineered to solve complex mathematical problems by unifying deep learning representations with symbolic search and formal verification algorithms.
 
-NOTES:The math_env.py and __init__.py files must be located inside the environment folder.
-Furthermore, within this entire architecture, efforts have been made to minimize hallucinations by the AI ​​agent and to enable it to run on limited hardware resources.
+AIDAN integrates a custom Nano Transformer architecture with Monte Carlo Tree Search (MCTS) and Hierarchical Reinforcement Learning (HRL), delivering high-precision multi-step reasoning while maintaining a strict <15 GB RAM footprint for consumer-grade hardware execution.
+
+---
+## Core Engineering Highlights
+Neuro-Symbolic Dual System: Blends statistical language representations with deterministic symbolic execution routines to drastically reduce hallucination in multi-step proofs.
+MCTS-Guided Path Pruning: Employs tree search algorithms to evaluate alternative proof trajectories, pruning suboptimal steps before state transitions.
+Resource-Constrained Optimization: Tailored tensor management and execution buffers enable complex MCTS rollouts and inference within a strict 15 GB RAM boundary.
+Curriculum-Driven Reinforcement Learning: Dynamically adjusts task difficulty based on convergence metrics, allowing autonomous progression from fundamental logic to complex proofs.
+Modular Object-Oriented Framework: Clean separation between environment wrappers, search controllers, neural policies, and state loggers.
+Auditable Execution Logs: Granular event logging records every state evaluation, heuristic score, and search decision for deep telemetry and debugging.
+
+---
+## Tech Stack
+Core Frameworks: Python 3.10+, PyTorch, NumPy
+Algorithmics: Monte Carlo Tree Search (MCTS), Hierarchical Reinforcement Learning (HRL)
+Symbolic & Environment: Custom Formal Logic Wrappers (environment/math_env.py)
+System & Benchmarking: Custom Memory Profilers, Logging Interfaces
+
+---
+## Architecture Overview
+
+AIDAN bridges the gap between probabilistic neural generation and deterministic symbolic verification to bound hallucination rates during complex deduction steps.
+
+```text
+                                  ┌────────────────────────┐
+                                  │   Input Math Problem   │
+                                  └───────────┬────────────┘
+                                              │
+                                              ▼
+┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│ AIDAN Core Dual-System Loop                                                             │
+│                                                                                         │
+│   ┌──────────────────────────┐    Guided Search    ┌────────────────────────────────┐   │
+│   │  Neural Policy / Value   │ ──────────────────> │    Monte Carlo Tree Search     │   │
+│   │   (Nano Transformer)     │ <────────────────── │        (MCTS Engine)           │   │
+│   └──────────────────────────┘    Value Feedback   └───────────────┬────────────────┘   │
+│                                                                    │                    │
+└────────────────────────────────────────────────────────────────────┼────────────────────┘
+                                                                     │ Step Proposal
+                                                                     ▼
+                                                     ┌────────────────────────────────┐
+                                                     │     Symbolic Environment       │
+                                                     │     (environment/math_env)     │
+                                                     └───────────────┬────────────────┘
+                                                                     │
+                                                                     ▼
+                                                     ┌────────────────────────────────┐
+                                                     │   Verified Deductive Output    │
+                                                     └────────────────────────────────┘
